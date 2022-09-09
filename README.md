@@ -8,13 +8,9 @@ It contains following containers:
 - mariadb as dependency
 - hive metastore  3.1.2
 
-### How to run
-
-use docker compose to build && start hive
-
+### Docker Image Usage
 ```
-$ docker-compose build
-$ docker-compose up -d
+docker run --rm hhlai1990/hive-standalone-metastore:latest
 ```
 
 ### Spark
@@ -30,6 +26,16 @@ val spark = SparkSession
       .enableHiveSupport()
       .getOrCreate()
 ```
+
+### Build and run
+
+use docker compose to build && start hive
+
+```
+$ docker-compose build
+$ docker-compose up -d
+```
+
 #### Some useful Docker commmands
 clean unused images after docker building.
 ```
