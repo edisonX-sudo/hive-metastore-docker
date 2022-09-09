@@ -1,0 +1,25 @@
+version: "2"
+
+services:
+  hive-metastore-database:
+    image: mariadb:latest
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_DATABASE: metastore_db
+
+  hive-metastore:
+    build:
+      context: .
+      network: host
+    image: hive-metastore:latest
+    ports:
+    - 9083:9083
+   #- 9000:9000
+    depends_on:
+      - hive-metastore-database
+    command: ["/wait-for-it.sh", "hive-metastore-database:3306", "--", "/entrypoint.sh"]
+
