@@ -10,7 +10,7 @@ It contains following containers:
 
 ### Docker Image Usage
 ```
-docker run --rm hhlai1990/hive-standalone-metastore:latest
+docker pull hhlai1990/hive-standalone-metastore:latest
 ```
 
 ### Spark
