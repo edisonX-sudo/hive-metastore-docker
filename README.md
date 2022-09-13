@@ -32,6 +32,8 @@ services:
     image: hhlai1990/hive-standalone-metastore:latest
     ports:
       - 9083:9083
+    volumes:
+      - /tmp/hive:/tmp/hive      
     depends_on:
       - hive-metastore-database   
     command: ["/wait-for-it.sh", "hive-metastore-database:3306", "--", "/entrypoint.sh"]
