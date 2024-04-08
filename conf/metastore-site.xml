@@ -25,16 +25,54 @@
         <name>javax.jdo.option.ConnectionDriverName</name>
         <value>com.mysql.cj.jdbc.Driver</value>
     </property>
+    <!-- change here -->
     <property>
         <name>javax.jdo.option.ConnectionURL</name>
-        <value>jdbc:mysql://hive-metastore-database:3306/metastore_db</value>
+        <value>${JDBC_URL}</value>
+<!--        <value>jdbc:mysql://hive-metastore-database:3306/metastore_db</value>-->
     </property>
+    <!-- change here -->
     <property>
         <name>javax.jdo.option.ConnectionUserName</name>
-        <value>admin</value>
+        <value>${JDBC_USER}</value>
+<!--        <value>admin</value>-->
     </property>
+    <!-- change here -->
     <property>
         <name>javax.jdo.option.ConnectionPassword</name>
-        <value>admin</value>
+        <value>${JDBC_PASS}</value>
+<!--        <value>admin</value>-->
+    </property>
+    <property>
+        <name>hive.metastore.event.db.notification.api.auth</name>
+        <value>false</value>
+    </property>
+    <!-- change here -->
+    <property>
+        <name>fs.s3a.access.key</name>
+        <value>${S3_ACCESS}</value>
+<!--        <value>S3_ACCESS_KEY</value>-->
+    </property>
+    <!-- change here -->
+    <property>
+        <name>fs.s3a.secret.key</name>
+        <value>${S3_SECRET}</value>
+<!--        <value>S3_SECRET_KEY</value>-->
+    </property>
+    <!-- change here -->
+    <property>
+        <name>fs.s3a.endpoint</name>
+        <value>${S3_ENDPOINT}</value>
+<!--        <value>S3_ENDPOINT</value>-->
+    </property>
+    <!-- depend  -->
+    <property>
+        <name>fs.s3a.connection.ssl.enabled</name>
+        <value>${S3_SSL_ENABLE}</value>
+    </property>
+    <!-- depend  -->
+    <property>
+        <name>fs.s3a.path.style.access</name>
+        <value>${S3_PATH_STYLE_ACCESS}</value>
     </property>
 </configuration>
